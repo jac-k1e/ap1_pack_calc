@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Appliance Container Fit Calculator</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Appliance Container Fit Calculator</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <h1>Appliance Container Fit Calculator</h1>
 
-<h3>Enter Appliance & Packaging Dimensions</h3>
+<h2>Enter Appliance & Packaging Dimensions</h2>
 
 <form id="calcForm">
   <label>Unit Width (in): <input type="number" id="uWidth" step="0.01" required></label>
@@ -23,12 +22,19 @@
   <label>Box Thickness (in): <input type="number" id="boxThickness" step="0.01" required></label>
   <label>Box Height (in): <input type="number" id="boxHeight" step="0.01" required></label>
 
-  <label>Clamp Blade Thickness (in): <input type="number" id="clampBlade" step="0.01" value="0.25" required></label>
+  <label>Clamp Blade Thickness (in): <input type="number" id="clampBlade" value="0.25" step="0.01" required></label>
 
-  <button type="submit">Calculate Container Fits</button>
+  <button type="submit">Calculate</button>
 </form>
 
-<pre id="output" class="results"></pre>
+<div id="containerDims"></div>
+<pre id="output"></pre>
+
+<h2>Top View Layout (Width × Length)</h2>
+<canvas id="topView" width="800" height="300"></canvas>
+
+<h2>Side View Layout (Height × Length)</h2>
+<canvas id="sideView" width="800" height="300"></canvas>
 
 <script src="script.js"></script>
 </body>
